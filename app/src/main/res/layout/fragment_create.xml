@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Root">
+
+    <TableRow style="@style/Grid.Horizontal">
+
+        <Spinner
+            android:id="@+id/create_kind"
+            style="@style/Grid.Horizontal.Item" />
+
+        <EditText
+            android:id="@+id/create_id"
+            style="@style/Grid.Horizontal.Item"
+            android:hint="@string/create_id" />
+
+    </TableRow>
+
+    <TableRow style="@style/Grid.Horizontal">
+
+        <Spinner
+            android:id="@+id/create_from"
+            style="@style/Grid.Horizontal.Item" />
+
+        <Spinner
+            android:id="@+id/create_to"
+            style="@style/Grid.Horizontal.Item" />
+
+    </TableRow>
+
+    <TableRow style="@style/Grid.Horizontal">
+
+        <Button
+            android:id="@+id/create_apply"
+            style="@style/Grid.Horizontal.Item"
+            android:layout_weight="12"
+            android:text="@android:string/ok" />
+
+    </TableRow>
+
+</TableLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MatchMatch">
+
+    <TextView
+        android:id="@+id/db_time"
+        style="@style/Grid.Horizontal.Item"
+        android:gravity="center"
+        android:textSize="@dimen/lSP"
+
+        tools:text="bubuub" />
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/db_kind"
+            style="@style/Grid.Horizontal.Item"
+            android:gravity="center"
+            android:textSize="@dimen/lSP"
+
+            tools:text="bubuub" />
+
+        <TextView
+            android:id="@+id/db_id"
+            style="@style/Grid.Horizontal.Item"
+            android:gravity="center"
+            android:textSize="@dimen/lSP"
+
+            tools:text="bubuub" />
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+            android:id="@+id/db_from"
+            style="@style/Grid.Horizontal.Item"
+            android:gravity="center"
+            android:textSize="@dimen/lSP"
+
+            tools:text="bubuubbubuubbubuubbubuubbubuub" />
+
+        <TextView
+            android:id="@+id/db_to"
+            style="@style/Grid.Horizontal.Item"
+            android:gravity="center"
+            android:textSize="@dimen/lSP"
+
+            tools:text="bubuub" />
+    </TableRow>
+
+</TableLayout>
