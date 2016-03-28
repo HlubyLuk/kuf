@@ -42,6 +42,20 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent();
             intent.setClass(activity, DetailActivity.class);
 
+            switch (v.getId()) {
+                case R.id.home_create:
+                    intent.putExtra(DetailActivity.FRAGMENT, DetailActivity.CREATE);
+                    break;
+
+                case R.id.home_list:
+                    intent.putExtra(DetailActivity.FRAGMENT, DetailActivity.LIST);
+                    break;
+
+                default:
+                    String format = String.format("%s", "Not implemented");
+                    Log.e(TAG, format);
+            }
+
             startActivity(intent);
         }
     }

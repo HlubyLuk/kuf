@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    style="@style/Root"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        style="@style/MatchMatch"
+        android:text="@string/home_list"
+        android:gravity="center"
+        />
+
+</FrameLayout>
