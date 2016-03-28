@@ -19,23 +19,23 @@ public class DBEvent {
         this.timeStamp = timeStamp;
     }
 
-    public Kind getKind() {
-        return kind;
+    public long getTimeStamp() {
+        return timeStamp;
     }
 
-    public Place getFrom() {
-        return from;
-    }
-
-    public Place getTo() {
-        return to;
+    public String getKindName() {
+        return kind.getName();
     }
 
     public String getId() {
         return id;
     }
 
-    public long getTimeStamp() {
-        return timeStamp;
+    public String getFromName() {
+        return from.getName();
+    }
+
+    public String getToName() {
+        return to.getName();
     }
 }

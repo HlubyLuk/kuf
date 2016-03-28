@@ -10,11 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import java.util.List;
+
+import cz.hlubyluk.myapplication.adapter.EventAdapter;
+import cz.hlubyluk.myapplication.database.Database;
+import cz.hlubyluk.myapplication.entity.DBEvent;
+
 /**
  * Created by HlubyLuk on 28.03.16.
  */
 public class FragmentList extends Fragment{
     private static final String TAG = "FragmentList";
+    private EventAdapter adapter;
 
     public static Fragment newInstance() {
         return new FragmentList();
@@ -35,6 +42,10 @@ public class FragmentList extends Fragment{
     }
 
     private void setUp(Context context) {
+        Database database = new Database(context);
+        List<DBEvent> data = database.getAll();
+
+        adapter = new EventAdapter(context, data);
     }
 
     @Nullable
@@ -50,5 +61,6 @@ public class FragmentList extends Fragment{
         super.onViewCreated(view, savedInstanceState);
 
         ListView list = (ListView) view.findViewById(R.id.list_list);
+        list.setAdapter(adapter);
     }
 }
