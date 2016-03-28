@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Grid">
+
+    <TableRow style="@style/MatchWrap">
+
+        <Button
+            android:id="@+id/home_create"
+            style="@style/Grid.Horizontal.Home"
+            android:layout_weight="6"
+            android:text="@string/home_create" />
+
+        <Button
+            android:id="@+id/home_list"
+            style="@style/Grid.Horizontal.Home"
+            android:layout_weight="6"
+            android:text="@string/home_list" />
+
+    </TableRow>
+
+</TableLayout>
