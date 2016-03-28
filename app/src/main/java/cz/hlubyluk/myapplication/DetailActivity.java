@@ -10,11 +10,11 @@ import android.support.v7.app.AppCompatActivity;
 /**
  * Created by HlubyLuk on 28.03.16.
  */
-public class DetailActivity extends AppCompatActivity{
-    private static final String TAG = "DetailActivity";
+public class DetailActivity extends AppCompatActivity implements ICancel {
     public static final String FRAGMENT = "fragment";
     public static final int CREATE = 0;
     public static final int LIST = 1;
+    private static final String TAG = "DetailActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,5 +43,10 @@ public class DetailActivity extends AppCompatActivity{
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.detail_root, fragment, TAG);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onCancel() {
+        finish();
     }
 }
