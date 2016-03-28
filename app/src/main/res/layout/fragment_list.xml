@@ -3,7 +3,8 @@
     style="@style/Root"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
+    <ListView
+        android:id="@+id/list_list"
         style="@style/MatchMatch"
         android:text="@string/home_list"
         android:gravity="center"
