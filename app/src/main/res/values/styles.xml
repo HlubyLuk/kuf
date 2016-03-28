@@ -8,4 +8,41 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MatchMatch" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Root" parent="MatchMatch">
+        <item name="android:padding">@dimen/sDP</item>
+    </style>
+
+    <style name="MatchWrap" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapMatch" parent="AppTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Grid" parent="MatchMatch">
+        <item name="android:weightSum">12</item>
+    </style>
+
+    <style name="Grid.Horizontal" parent="Grid">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Grid.Horizontal.Home" parent="Grid.Horizontal">
+        <item name="android:layout_margin">@dimen/xsDP</item>
+    </style>
+
+    <style name="Grid.Vertical" parent="Grid">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
 </resources>

@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="cz.hlubyluk.myapplication.MainActivity">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Grid">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+    <TableRow style="@style/MatchWrap">
+
+        <Button
+            android:id="@+id/home_create"
+            style="@style/Grid.Horizontal.Home"
+            android:layout_weight="6"
+            android:text="@string/home_create" />
+
+        <Button
+            android:id="@+id/home_list"
+            style="@style/Grid.Horizontal.Home"
+            android:layout_weight="6"
+            android:text="@string/home_list" />
+
+    </TableRow>
+
+</TableLayout>
