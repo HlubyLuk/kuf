@@ -1,5 +1,7 @@
 package cz.hlubyluk.myapplication.entity;
 
+import android.support.annotation.Nullable;
+
 /**
  * Created by HlubyLuk on 28.03.16.
  */
@@ -31,5 +33,17 @@ public enum Place implements Item {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Nullable
+    public static Place find(int id) {
+        Place[] values = values();
+        for (Place value : values) {
+            if (value.getId() == id){
+                return value;
+            }
+        }
+
+        return null;
     }
 }

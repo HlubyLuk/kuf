@@ -6,7 +6,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.Editable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import cz.hlubyluk.myapplication.adapter.DropDownAdapter;
+import cz.hlubyluk.myapplication.database.Database;
 import cz.hlubyluk.myapplication.entity.Kind;
 import cz.hlubyluk.myapplication.entity.Place;
 
@@ -29,6 +29,8 @@ public class FragmentCreate extends Fragment {
     private Spinner from;
     private Spinner to;
     private EditText id;
+    private Database database;
+    private ICancel callBack;
 
     public static Fragment newInstance() {
         return new FragmentCreate();
@@ -38,19 +40,21 @@ public class FragmentCreate extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
-        createAdapters(activity);
+        setUpFragment(activity);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        createAdapters(context);
+        setUpFragment(context);
     }
 
-    private void createAdapters(Context context) {
-        kindAdapter = new DropDownAdapter(context, Kind.values());
-        placeAdapter = new DropDownAdapter(context, Place.values());
+    private void setUpFragment(Context context) {
+        this.callBack = ((ICancel) context);
+        this.database = new Database(context);
+        this.kindAdapter = new DropDownAdapter(context, Kind.values());
+        this.placeAdapter = new DropDownAdapter(context, Place.values());
     }
 
     @Nullable
@@ -85,14 +89,9 @@ public class FragmentCreate extends Fragment {
             Place toSelected = (Place) to.getSelectedItem();
             Editable text = id.getText();
 
-            String format = String.format(
-                    "kind %s, from %s, to %s, text %s",
-                    kindSelected.toString(),
-                    fromSelected.toString(),
-                    toSelected.toString(),
-                    text.toString()
-            );
-            Log.d(TAG, format);
+            database.insert(kindSelected, fromSelected, toSelected, text);
+
+            callBack.onCancel();
         }
     }
 }
